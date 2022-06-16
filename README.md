@@ -1,10 +1,9 @@
 # Gurufocus Ad Free
 Simple script that removes annoying ads from gurufocus, feel free to contribute if you spot any new ad on the site :)
-## Without script
+## Without the script
 ![Without the script](https://raw.githubusercontent.com/KamilKoso/gurufocus-ad-free/master/assets/gurufocus_blotered_with_ads.png) 
 
-
-## With script
+## With the script
 ![With the script](https://raw.githubusercontent.com/KamilKoso/gurufocus-ad-free/master/assets/gurufocus_ad_free.png)
 ## Installation
 Install **[Tampermonkey](https://www.tampermonkey.net/)** browser extension 
