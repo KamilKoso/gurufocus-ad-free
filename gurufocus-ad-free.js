@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gurufocus ad-free
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Remove annoying ads from gurufocus :)
 // @author       https://github.com/KamilKoso
 // @match        https://www.gurufocus.com/*
@@ -21,7 +21,7 @@ const pwcouCookie = {
 };
 
 // add here ads that are being displayed repeatedly
-const adsToClear = ["div.el-dialog__wrapper", "div.v-modal", "div.paywall-shadow", "div#business-description-non-logged", "section#notification-bar", "div#colorbox", "div#cboxOverlay", "div.ad-image-container"];
+const adsToClear = ["div.el-dialog__wrapper.gf", "div.v-modal", "div.paywall-shadow", "div#business-description-non-logged", "section#notification-bar", "div#colorbox", "div#cboxOverlay", "div.ad-image-container"];
 
 function clearPage() {
   let elems = document.querySelectorAll(adsToClear);
