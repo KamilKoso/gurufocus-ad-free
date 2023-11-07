@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gurufocus ad-free
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Remove annoying ads from gurufocus :)
 // @author       https://github.com/KamilKoso
 // @match        https://www.gurufocus.com/*
@@ -29,6 +29,15 @@ function clearPage() {
   elems.forEach((elem) => {
     elem.remove();
   });
+
+  fixScroll();
+}
+
+function fixScroll() {
+  const appContainer = document.querySelector('.app-wrapper .el-container')
+  if (appContainer.getAttribute('style') == 'height: auto;') {
+    appContainer.setAttribute('style', 'height: calc(100vh - 142px);');
+  }
 }
 
 function setCookie(cName, cValue, cDomain, expDays) {
@@ -39,5 +48,5 @@ function setCookie(cName, cValue, cDomain, expDays) {
 }
 
 (function () {
-  observer.observe(document.body, { childList: true });
+  observer.observe(document.body, { subtree: true, childList: true });
 })();
