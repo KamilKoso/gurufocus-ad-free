@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gurufocus ad-free
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.4
 // @description  Remove annoying ads from gurufocus :)
 // @author       https://github.com/KamilKoso
 // @match        https://www.gurufocus.com/*
@@ -14,7 +14,7 @@ const observer = new MutationObserver(clearPage);
 
 // This cookie is incremented each refresh, if value reaches 6 big ad shows and site is not being fully loaded
 const pwcouCookie = {
-  name: "pwcou",
+  name: "pwcou1",
   domain: ".gurufocus.com",
   desiredValue: 0,
   expirationDays: 30,
@@ -34,9 +34,9 @@ function clearPage() {
 }
 
 function fixScroll() {
-  const appContainer = document.querySelector('.app-wrapper .el-container')
-  if (appContainer.getAttribute('style') == 'height: auto;') {
-    appContainer.setAttribute('style', 'height: calc(100vh - 142px);');
+  const appContainer = document.querySelector(".app-wrapper .el-container");
+  if (appContainer.getAttribute("style") == "height: auto;") {
+    appContainer.setAttribute("style", "height: calc(100vh - 142px);");
   }
 }
 
